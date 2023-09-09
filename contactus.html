@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label,
+    input,
+    textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #800000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #800000;
+    }
+  </style>
+
 </head>
+
 <body>
-    <p1>Have any questions, want to show some appreciation, or just want to send us some college jokes?</p1>
-    <p></p>
-    <p2>Contact Us!
+  <p1>Have any questions, want to show some appreciation, or just want to send us some college jokes?</p1>
+  <p></p>
+  <p2>Contact Us!
     <p></p>
     <p>(We usually respond in 2-3 business days)</p>
-    <form action="submit_form.php" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
     
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-    
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-    
-        <input type="submit" value="Submit">
+    <form>
+      <label for="fname">Name</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="email">Email</label><br>
+      <input type="text" id="email" email = "email"><br>
+      <label for = "message">Message</label><br>
+      <input type = "text" id = "message" message = "message"><br>
+      <input type="submit" value="Submit">
     </form>
+   
+    <div id="confirmation-message" style="display: none;">
+      <p>Thank you for your submission! We will get back to you soon.</p>
+      <button onclick="backToHome()">Back to Home</button>
+    </div>
+  </p2>
+
+  <script>
+    function backToHome() {
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
+
 </html>
+
