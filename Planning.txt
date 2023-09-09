@@ -1,13 +1,11 @@
 This is our planning page
 Liveshare link:
-https://prod.liveshare.vsengsaas.visualstudio.com/join?1266E7D4F954495BB9510799171AF7B4A1C1
+https://prod.liveshare.vsengsaas.visualstudio.com/join?5654E5CAC2B20D8B78F4D727F1FC57F13FED
 
 Classes we are going to
 1. Web development (1:30)
 2. Intro to design (2:15)
 3. Dinner (7:30)
-
-
 
 Classes for fun (individual)
 1. Computer vision (4:30)
