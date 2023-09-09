@@ -49,25 +49,24 @@ nav a:hover{
 
 .welcome{
     height: 200%;
-    float: right;
 
 }
 
 .circle {
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     background-color: #490f0f;
     border-radius: 50%;
-    display: inline-block;
     position: absolute;
-    top: 250px;
-    right: 10px;
+    top: 150px;
+    left:50%;
+    top:50%;
     z-index:-1;
 
   }
 
 .welcome h1{
-    font-size: 90px;
+    font-size: 150px;
     padding: 20px;
     color: rgb(147, 17, 17);
     text-shadow: -1px -1px 0 #000, 10px 5px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
