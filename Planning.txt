@@ -1,6 +1,6 @@
 This is our planning page
 Liveshare link:
-https://prod.liveshare.vsengsaas.visualstudio.com/join?5654E5CAC2B20D8B78F4D727F1FC57F13FED
+https://prod.liveshare.vsengsaas.visualstudio.com/join?3055E9049B61B59A4B13857424AAC418DC01
 
 Classes we are going to
 1. Web development (1:30)
