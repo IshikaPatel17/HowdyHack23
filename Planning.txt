@@ -1,3 +1,44 @@
 This is our planning page
 Liveshare link:
-https://prod.liveshare.vsengsaas.visualstudio.com/join?CBD9F7174450B89D4B01D5D7F9B16C6E237C
+https://prod.liveshare.vsengsaas.visualstudio.com/join?1266E7D4F954495BB9510799171AF7B4A1C1
+
+Classes we are going to
+1. Web development (1:30)
+2. Intro to design (2:15)
+3. Dinner (7:30)
+
+
+
+Classes for fun (individual)
+1. Computer vision (4:30)
+2. Web App security (8:15)
+
+Project Ideas:
+1. Retro Game website
+    - Pack Man
+    - Tetris
+    - Make it Aggie Theme
+    - "Study break"
+
+2. Day planner/ schedule generator
+    - Generate schedule for your day/week
+    - Add locations and work around your inputted schedule
+
+3. Matching tutors with students
+    - Job board but for tutoring
+    - Creat accounts
+    - Matching aggies with tutors
+
+Timeline:
+12:00-12:30 brainstroming MSC
+13:30-1:00 Lunch
+1:30-2:15 intro to web development
+2:15-3:00 intro to design
+3:15-7:15 finalize roject and start designing (zach)
+7:30-8:00 dinner
+8:00-tba continue working zach
+
+9:00 - 11:00 finish up project + come up with presentation
+11:00 Devpost Walkthrough
+12:00 - 12:45 Lunch
+1:00-2:00 Run through presentation
