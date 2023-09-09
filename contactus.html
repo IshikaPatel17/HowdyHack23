@@ -28,7 +28,7 @@
     }
 
     input[type="submit"] {
-      background-color: #007BFF;
+      background-color: #800000;
       color: #fff;
       border: none;
       padding: 10px 20px;
@@ -36,7 +36,7 @@
     }
 
     input[type="submit"]:hover {
-      background-color: #0056b3;
+      background-color: #800000;
     }
   </style>
 
@@ -48,19 +48,17 @@
   <p2>Contact Us!
     <p></p>
     <p>(We usually respond in 2-3 business days)</p>
-    <form action="submit_form.php" method="POST" id="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-
+    
+    <form>
+      <label for="fname">Name</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="email">Email</label><br>
+      <input type="text" id="email" email = "email"><br>
+      <label for = "message">Message</label><br>
+      <input type = "text" id = "message" message = "message"><br>
       <input type="submit" value="Submit">
     </form>
-
+   
     <div id="confirmation-message" style="display: none;">
       <p>Thank you for your submission! We will get back to you soon.</p>
       <button onclick="backToHome()">Back to Home</button>
@@ -69,7 +67,6 @@
 
   <script>
     function backToHome() {
-      // Redirect the user to the homepage.
       window.location.href = "index.html";
     }
   </script>
