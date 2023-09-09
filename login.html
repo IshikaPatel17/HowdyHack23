@@ -64,18 +64,7 @@
                 })
 
         }
-        function InsertData() {
-            console.log(document.getElementById('username').value)
-            set(ref(db, "" + document.getElementById('username').value), { name: document.getElementById('name').value, email: document.getElementById('email').value, username: document.getElementById('username').value, password: document.getElementById('password').value })
-                .then((userCredential) => {
-                    console.log("added")
-                    //window.location.href = "homepage.html";
-                })
-                .catch((error) => {
-                    //alert(error);
-                });
-
-        }
+        
         /*
         document.addEventListener('DOMContentLoaded', () => {
             let btn = document.getElementById('enter')
@@ -90,7 +79,7 @@
             let btn = document.getElementById('LoginBtn')
             btn.addEventListener('click', function (evt) {
                 FindData();
-                clearFields();
+            
             })
         })
 
