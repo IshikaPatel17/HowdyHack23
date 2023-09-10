@@ -15,7 +15,7 @@
         },
         "WonderWoman99": {
             "course": [
-              "MATH 251",
+              "MATH 150",
               "POLS 207"
             ],
             "dates": "Monday: 5:00pm-6:00pm, Wednesday: 5:00pm-6:00pm, Saturday: 5:00pm-6:00pm, ",
@@ -41,28 +41,29 @@
             "type": "hero",
             "username": "PinkiePie77"
         },
-        "AshlynnB8": {
+        "HetP": {
             "course": [
                 "MATH 251",
                 "ENGR 102"
             ],
             "dates": "Monday: 4:00pm-7:00pm, Tuesday: 6:30pm-8:30pm, Wednesday: 5:00pm-6:00pm, ",
-            "email": "teacher2@tamu.edu",
-            "name": "Ashlynn Ber",
-            "password": "teacher1",
-            "rate": "8",
+            "email": "HetP@tamu.edu",
+            "name": "Het Patel",
+            "password": "StudyHard",
+            "rate": "5",
             "type": "hero",
-            "username": "Ashlynnb8"
+            "username": "HetP"
         },
         "AshlynnB8": {
             "course": [
-                "MATH 251",
+                "MATH 150",
                 "ENGR 102"
+                
             ],
             "dates": "Monday: 4:00pm-7:00pm, Tuesday: 6:30pm-8:30pm, Wednesday: 5:00pm-6:00pm, ",
             "email": "teacher2@tamu.edu",
             "name": "Ashlynn Ber",
-            "password": "teacher1",
+            "password": "BeAHero",
             "rate": "8",
             "type": "hero",
             "username": "Ashlynnb8"
@@ -95,7 +96,104 @@
             "rate": "10",
             "type": "hero",
             "username": "Flash12"
-
+        },
+        "MickeyM": {
+            "course": [
+                "PHYS 206",
+                "ENGL 104",
+                "ENGL 216"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 5:00pm-7:30pm, Friday: 7:00pm-9:00pm, ",
+            "email": "MickeyM22@tamu.edu",
+            "name": "Mickey Mouse",
+            "password": "MickeyMouse22",
+            "rate": "10",
+            "type": "hero",
+            "username": "MickeyM"
+        },
+        "BatMan": {
+            "course": [
+                "MATH 251",
+                "ENGR 102",
+                "CHEM 117"
+            ],
+            "dates": "Tuesday: 3:00pm-5:00pm, Wednesday: 6:30pm-8:30pm, Saturday: 7:00pm-9:00pm, ",
+            "email": "Batman3@tamu.edu",
+            "name": "Bruce Wane",
+            "password": "protectingthecity",
+            "rate": "7",
+            "type": "hero",
+            "username": "BatMan"
+        },
+        "ChrisH": {
+            "course": [
+                "MATH 150",
+                "ENGR 102",
+                "CHEM 117"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Thrusday: 4:00pm-6:00pm, Saturday: 7:00pm-9:00pm, ",
+            "email": "ChrisHass@tamu.edu",
+            "name": "Chris Hass",
+            "password": "Cherish",
+            "rate": "9",
+            "type": "hero",
+            "username": "ChrisH"
+        },
+        "BeyonceSing": {
+            "course": [
+                "MATH 152",
+                "ENGR 102",
+                "CHEM 117"
+            ],
+            "dates": "Tuesday: 3:00pm-5:00pm, Thursday: 6:30pm-8:30pm, Saturday: 7:00pm-9:00pm, ",
+            "email": "BeyonceS99@tamu.edu",
+            "name": "Beyonce Sings",
+            "password": "singyourheartout",
+            "rate": "10",
+            "type": "hero",
+            "username": "BeyonceSing"
+        },
+        "Minnie23": {
+            "course": [
+                "MATH 251",
+                "ENGR 102",
+                "CHEM 117"
+            ],
+            "dates": "Wednesday: 3:00pm-5:00pm, Friday: 7:00pm-9:30pm, Sunday: 7:00pm-9:00pm, ",
+            "email": "Minnie23@tamu.edu",
+            "name": "Minnie Mouse",
+            "password": "Clubhouse",
+            "rate": "11",
+            "type": "hero",
+            "username": "Minnie23"
+        },
+        "Flash12": {
+            "course": [
+                "MATH 251",
+                "ENGR 102",
+                "CHEM 117"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:30pm-8:30pm, Saturday: 7:00pm-9:00pm, ",
+            "email": "teacherflash@tamu.edu",
+            "name": "Flash Hen",
+            "password": "Flash45",
+            "rate": "10",
+            "type": "hero",
+            "username": "Flash12"
+        },
+        "Flash12": {
+            "course": [
+                "MATH 251",
+                "ENGR 102",
+                "CHEM 117"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:30pm-8:30pm, Saturday: 7:00pm-9:00pm, ",
+            "email": "teacherflash@tamu.edu",
+            "name": "Flash Hen",
+            "password": "Flash45",
+            "rate": "10",
+            "type": "hero",
+            "username": "Flash12"
         
         }
     }
