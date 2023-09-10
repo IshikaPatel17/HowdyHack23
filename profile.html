@@ -29,23 +29,23 @@
         <p class="lead">Please finish setting up your profile before we can start matching you.</p>
         <div id="jumbo>">
             <h3>Account Type</h3>
-            
-                <div class="form-row align-items-center">
-                    <div class="col-auto my-1">
-                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                            <option selected>Choose Account</option>
-                            <option value="1">student</option>
-                            <option value="2">hero</option>
-                        </select>
-                    </div>
+
+            <div class="form-row align-items-center">
+                <div class="col-auto my-1">
+                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <option selected>Choose Account</option>
+                        <option value="1">student</option>
+                        <option value="2">hero</option>
+                    </select>
                 </div>
-                <label for="photo">Choose a photo!</label>
-                <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png" onchange="loadFile(event)">
-                <br>
-                <img id="output" src="" alt="Selected Image" width="300">
-                <button id="hi">Submit Image</button>
-            
+            </div>
+            <label for="photo">Choose a photo!</label>
+            <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png" onchange="loadFile(event)">
+            <br>
+            <img id="output" src="" alt="Selected Image" width="300">
+            <button id="hi">Submit Image</button>
+
             <hr class="my-4">
             <a class="btn btn-primary btn-lg" id='submit-type' role="button"
                 style="background-color: rgb(78, 149, 149);">Next</a>
@@ -63,16 +63,80 @@
     };
 </script>
 <script type="module">
+
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
     import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js";
+
     //import { getDatabase, set} from 'firebase/database'
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
+    
+    var firebaseConfig = {
+        apiKey: "AIzaSyBwCOZyWSaa0xswC4CFLRT1-Kf5ZDeojyo",
+        authDomain: "hack23-d29c9.firebaseapp.com",
+        databaseURL: "https://hack23-d29c9-default-rtdb.firebaseio.com",
+        projectId: "hack23-d29c9",
+        storageBucket: "hack23-d29c9.appspot.com",
+        messagingSenderId: "991221953378",
+        appId: "1:991221953378:web:14fae9949ac2e35d8d323b",
+        measurementId: "G-LK91YT4F18"
+    };
+    // Initialize Firebase
+    var app = initializeApp(firebaseConfig);
+    const storage = getStorage(app);
+
+    console.log(app)
+    console.log(storage)
+
+    //const analytics = getAnalytics(app);
+
+
+    function run(evt) {
+        console.log(okay)
+        //var image = document.getElementById('output');
+        //image.src = URL.createObjectURL(evt.target.files[0]);
+        //console.log(event.target.files[0])
+        //okay = evt.target.files[0]
+        console.log("hi")
+
+        const storageRef = ref(storage, localStorage.getItem("Username") + "Image")
+        const task = uploadBytesResumable(storageRef, okay)
+        task.on("state_changed", function () { }, (error) => { }, async function () {
+            await getDownloadURL(task.snapshot.ref).then(
+                async function (url) {
+
+                }
+            )
+        })
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        let btn = document.getElementById('hi')
+        btn.addEventListener('click', function (evt) {
+
+            run()
+        })
+        btn = document.getElementById("form")
+        // btn.addEventListener('submit', function (evt) {
+
+
+        // })
+    })
+</script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+
+    //import { getDatabase, set} from 'firebase/database'
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
         apiKey: "AIzaSyBwCOZyWSaa0xswC4CFLRT1-Kf5ZDeojyo",
         authDomain: "hack23-d29c9.firebaseapp.com",
         databaseURL: "https://hack23-d29c9-default-rtdb.firebaseio.com",
@@ -84,41 +148,41 @@
     };
 
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+    var app = initializeApp(firebaseConfig);
     //const analytics = getAnalytics(app);
 
-    import { getDatabase, set, get, update, remove, child }
+    import { getDatabase, set, get, update, ref, remove, child }
         from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
     const db = getDatabase();
-    const storage = getStorage(app);
+    //const storage = getStorage(app);
     //image storage
-    function run(evt) {
-        console.log(okay)
-        //var image = document.getElementById('output');
-        //image.src = URL.createObjectURL(evt.target.files[0]);
-        //console.log(event.target.files[0])
-        //okay = evt.target.files[0]
-        console.log("hi")
-        const storageRef = ref(storage, localStorage.getItem("Username") + "Image")
-        uploadBytesResumable(storageRef, okay)
-        //pulling image 
-        //const task = uploadBytesResumable(storageRef, okay)
-        // task.on("state_changed", function () { }, (error) => { }, async function () {
-        //     await getDownloadURL(task.snapshot.ref).then(
-        //         async function (url) {
-        //               
-        //         }
-        //     )
-        // })
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        let btn = document.getElementById('hi')
-        btn.addEventListener('click', function (evt) {
-            run()
-        })
-    })
+    // function run(evt) {
+    //     console.log(okay)
+    //     //var image = document.getElementById('output');
+    //     //image.src = URL.createObjectURL(evt.target.files[0]);
+    //     //console.log(event.target.files[0])
+    //     //okay = evt.target.files[0]
+    //     console.log("hi")
+    //     const storageRef = ref(storage, localStorage.getItem("Username") + "Image")
+    //     uploadBytesResumable(storageRef, okay)
+    //     //pulling image 
+    //     //const task = uploadBytesResumable(storageRef, okay)
+    //     // task.on("state_changed", function () { }, (error) => { }, async function () {
+    //     //     await getDownloadURL(task.snapshot.ref).then(
+    //     //         async function (url) {
+    //     //               
+    //     //         }
+    //     //     )
+    //     // })
+    // }
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     let btn = document.getElementById('hi')
+    //     btn.addEventListener('click', function (evt) {
+    //         run()
+    //     })
+    // })
 
-    //end of image storage
+    // //end of image storage
 
 
 
@@ -129,6 +193,7 @@
 
 
     function InsertData() {
+        console.log("it passes")
         localStorage.setItem("Profile", document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
         if (localStorage.getItem("Profile") == 1) {
             update(ref(db, "" + localStorage.getItem("Username")), { type: "student" })
