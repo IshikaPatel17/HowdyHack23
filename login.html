@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-
 <head>
-
+  <title>Howdy Heroes</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  
 </head>
-
 <body>
+      <!-- nav bar-->
+      <nav class="home1">
+        <div class="right">
+          <a href="signup.html">SIGN UP</a>
+          <a href="login.html">LOG IN</a>
+        </div>
+        <div class="left">
+          <a href="index.html">HOME</a>
+          <a href="about.html">ABOUT</a>
+      </div>
+      </nav>
+
+<br><br><br><br><br><br>
+<center>
+<h2 class="sign_up">Log In!</h2>
+<div class="form">
     <h3>Email</h3>
     <input id='emailBox'></input>
     <h3>Username</h3>
     <input id='usernameBox'></input>
     <h3>Password</h3>
     <input id='passwordBox'></input>
-    <h2 id = "info"></h2>
+    <h2 id = "info"></h2> <br>
     <button id = "LoginBtn">Log in</button>
+</div>
+</center>
+
     <script type='module'>
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
