@@ -16,7 +16,7 @@
     <nav class="home1">
         <div class="right">
             <a href="profile.html">PROFILE</a>
-            <a href="#">LOG OUT</a>
+            <a href="index.html">LOG OUT</a>
         </div>
         <div class="left">
             <a href="homepage.html">HOME</a>
@@ -69,8 +69,8 @@
                         if (snapshot.val().type == "none") {
                             console.log("not working")
                         } else if(snapshot.val().type == "hero"){
-                            document.getElementById("button1").innerHTML = "Scheduled sessions"
-                            document.getElementById("statement").innerHTML = "Your profile is set up and ready to go! Click below to see your scheduled sessions."
+                            document.getElementById("button1").innerHTML = "Change Profile"
+                            document.getElementById("statement").innerHTML = "Your profile is set up and ready to go! When students book your sessions, they will appear here."
                         }else{
                             document.getElementById("statement").innerHTML = "Your profile is set up and ready to go! Click below to get matched to heros."
                             document.getElementById("button1").innerHTML = "Find hero"
@@ -108,7 +108,7 @@
                 }else if(btn.innerHTML == 'Profile'){
                     window.location.href = "profile.html"
                 }else{
-                    window.location.href = "schedule.html"
+                    window.location.href = "profile.html"
                 }
             })
         })
