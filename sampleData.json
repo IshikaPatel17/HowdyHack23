@@ -167,33 +167,228 @@
             "type": "hero",
             "username": "Minnie23"
         },
-        "Flash12": {
+        "ScarletJ": {
             "course": [
-                "MATH 251",
+                "MATH 150",
                 "ENGR 102",
-                "CHEM 117"
+                "CHEM 107"
             ],
             "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:30pm-8:30pm, Saturday: 7:00pm-9:00pm, ",
-            "email": "teacherflash@tamu.edu",
-            "name": "Flash Hen",
-            "password": "Flash45",
-            "rate": "10",
+            "email": "ScarJo@tamu.edu",
+            "name": "Scarlet Joh",
+            "password": "Blackwidow",
+            "rate": "8",
             "type": "hero",
-            "username": "Flash12"
+            "username": "ScarletJ"
         },
-        "Flash12": {
+        "AmandaBo": {
+            "course": [
+                "MATH 308",
+                "PHYS 222",
+                "ECEN 214"
+            ],
+            "dates": "Tuesday: 3:00pm-5:00pm, Wednesday: 5:0pm-8:00pm, Friday: 7:00pm-9:00pm, ",
+            "email": "AmanBB@tamu.edu",
+            "name": "Amanda Borry",
+            "password": "Learnlearn",
+            "rate": "12",
+            "type": "hero",
+            "username": "AmandaBo"
+        },
+        "GodofThunder": {
+            "course": [
+                "MATH 151",
+                "ENGR 102",
+                "ECON 202",
+                "ENGL 103"
+            ],
+            "dates": "Tuesday: 3:00pm-5:00pm, Wednesday: 6:30pm-8:30pm, Friday: 7:00pm-9:00pm, ",
+            "email": "ThorO2@tamu.edu",
+            "name": "Thor Odison",
+            "password": "Thor5566",
+            "rate": "8",
+            "type": "hero",
+            "username": "GodofThunder"
+        },
+        "IronMan": {
+            "course": [
+                "MATH 152",
+                "ENGR 102",
+                "CHEM 117",
+                "ENGL 104"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:30pm-8:30pm, Friday: 7:00pm-9:00pm, ",
+            "email": "Ironn@tamu.edu",
+            "name": "Tony Stark",
+            "password": "IronMan233",
+            "rate": "8",
+            "type": "hero",
+            "username": "IronMan"
+        },
+        "Kent2": {
+            "course": [
+                "MATH 151",
+                "ENGR 102",
+                "CHEM 117",
+                "COMM 203"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Thursday: 6:00pm-8:00pm, Friday: 7:00pm-9:00pm, ",
+            "email": "KentMurray@tamu.edu",
+            "name": "Kent Murray",
+            "password": "Kent2",
+            "rate": "8",
+            "type": "hero",
+            "username": "Kent2"
+        },
+        "Spidey": {
+            "course": [
+                "MATH 151",
+                "ENGR 102",
+                "CHEM 107"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:00pm-8:00pm, Sunday: 7:00pm-9:00pm, ",
+            "email": "Spideyy@tamu.edu",
+            "name": "Peter Parker",
+            "password": "spideyrockss",
+            "rate": "8",
+            "type": "hero",
+            "username": "Spidey"
+        },
+        "Zendaya": {
+            "course": [
+                "MATH 151",
+                "ENGR 102",
+                "CHEM 117",
+                "COMM 203"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:00pm-8:00pm, Friday: 7:00pm-9:00pm, ",
+            "email": "ZenPage@tamu.edu",
+            "name": "Zendaya Page",
+            "password": "gotoschool",
+            "rate": "8",
+            "type": "hero",
+            "username": "Zendaya"
+        },
+        "AuntMay": {
+            "course": [
+                "MATH 151",
+                "ENGR 102",
+                "CHEM 107",
+                "COMM 203"
+            ],
+            "dates": "Tuesday: 3:00pm-5:00pm, Wednesday: 6:00pm-8:00pm, Saturday: 7:00pm-9:00pm, ",
+            "email": "may@tamu.edu",
+            "name": "Aunt May",
+            "password": "ilovepeter",
+            "rate": "7",
+            "type": "hero",
+            "username": "AuntMay"
+        },
+        "Ken22": {
+            "course": [
+                "MATH 152",
+                "BIOL 112",
+                "CHEM 117",
+                "COMM 203"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Thrusday: 6:00pm-8:00pm, Friday: 7:00pm-9:00pm, ",
+            "email": "Ken@tamu.edu",
+            "name": "Ken B",
+            "password": "ImjustKen",
+            "rate": "6",
+            "type": "hero",
+            "username": "Ken22"
+        },
+        "Barbie": {
             "course": [
                 "MATH 251",
                 "ENGR 102",
-                "CHEM 117"
+                "CHEM 107",
+                "COMM 203"
             ],
-            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:30pm-8:30pm, Saturday: 7:00pm-9:00pm, ",
-            "email": "teacherflash@tamu.edu",
-            "name": "Flash Hen",
-            "password": "Flash45",
-            "rate": "10",
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:00pm-8:00pm, Friday: 7:00pm-9:00pm, ",
+            "email": "Barbie@tamu.edu",
+            "name": "Barbie",
+            "password": "realworld",
+            "rate": "8",
             "type": "hero",
-            "username": "Flash12"
+            "username": "Barbie"
+         },
+        "ANTman": {
+            "course": [
+                "MATH 151",
+                "ENGR 102",
+                "PHYS 207",
+                "COMM 203"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Thursday: 6:00pm-8:00pm, Friday: 7:00pm-9:00pm, ",
+            "email": "ANTman@tamu.edu",
+            "name": "Scott Lang",
+            "password": "Quantum",
+            "rate": "7",
+            "type": "hero",
+            "username": "ANTman"
+         },
+        "Thanos4": {
+            "course": [
+                "MATH 151",
+                "ECON 202",
+                "PHYS 207",
+                "COMM 203"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 7:00pm-8:00pm, Sunday: 7:00pm-9:00pm, ",
+            "email": "Thanoss@tamu.edu",
+            "name": "Thanos Ba",
+            "password": "infinitystones",
+            "rate": "12",
+            "type": "hero",
+            "username": "Thanos4"
+         },
+        "AnnHatheway": {
+            "course": [
+                "MATH 152",
+                "ECON 202",
+                "PHYS 207",
+                "COMM 203"
+            ],
+            "dates": "Tuesaday: 3:00pm-5:00pm, Wednesday: 6:00pm-8:00pm, Saturday: 7:00pm-9:00pm, ",
+            "email": "princess@tamu.edu",
+            "name": "Ann Hatheway",
+            "password": "actinginmovies",
+            "rate": "8",
+            "type": "hero",
+            "username": "AnnHatheway"
+         },
+        "Barbie": {
+            "course": [
+                "MATH 251",
+                "ENGR 102",
+                "HET 207",
+                "COMM 203"
+            ],
+            "dates": "Tuesday: 3:00pm-5:00pm, Wednesday: 6:00pm-8:00pm, Satuday: 7:00pm-9:00pm, ",
+            "email": "Barbie@tamu.edu",
+            "name": "Barbie",
+            "password": "realworld",
+            "rate": "8",
+            "type": "hero",
+            "username": "Barbie"
+         },
+        "Barbie": {
+            "course": [
+                "MATH 251",
+                "ENGR 102",
+                "CHEM 107",
+                "COMM 203"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:00pm-8:00pm, Friday: 7:00pm-9:00pm, ",
+            "email": "Barbie@tamu.edu",
+            "name": "Barbie",
+            "password": "realworld",
+            "rate": "8",
+            "type": "hero",
+            "username": "Barbie"
+        
         
         }
     }
