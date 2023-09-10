@@ -33,28 +33,93 @@
                 <div class="col-auto my-1">
                     <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected>Choose Account</option>
+                        <option value="1">Student</option>
+                        <option value="2">Hero(tutor)</option>
                     </select>
-                </div>
-                <div class="col-auto my-1">
-                    <div class="custom-control custom-checkbox mr-sm-2">
-                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                        <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
-                    </div>
-                </div>
-                <div class="col-auto my-1">
-                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </form>
-        <input id="account-type">
         <hr class="my-4">
-        <a class="btn btn-primary btn-lg" href="profile.html" role="button"
-            style="background-color: rgb(78, 149, 149);">Profile</a>
+        <a class="btn btn-primary btn-lg" id='submit-type' role="button"
+            style="background-color: rgb(78, 149, 149);">Next</a>
     </div>
 </body>
+<script type = "module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        //import { getDatabase, set} from 'firebase/database'
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwCOZyWSaa0xswC4CFLRT1-Kf5ZDeojyo",
+            authDomain: "hack23-d29c9.firebaseapp.com",
+            databaseURL: "https://hack23-d29c9-default-rtdb.firebaseio.com",
+            projectId: "hack23-d29c9",
+            storageBucket: "hack23-d29c9.appspot.com",
+            messagingSenderId: "991221953378",
+            appId: "1:991221953378:web:14fae9949ac2e35d8d323b",
+            measurementId: "G-LK91YT4F18"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        //const analytics = getAnalytics(app);
+
+        import { getDatabase, set, get, update, remove, ref, child }
+            from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        const db = getDatabase();
+
+        function InsertData() {
+            console.log(document.getElementById('username').value)
+            set(ref(db, ""+document.getElementById('username').value), { name: document.getElementById('name').value, email: document.getElementById('email').value, username: document.getElementById('username').value, password: document.getElementById('password').value })
+                .then((userCredential) => {
+                    localStorage.setItem("Username", document.getElementById('username').value)
+                    localStorage.setItem("Password", document.getElementById('password').value)
+                    localStorage.setItem("Name", document.getElementById('name').value)
+                    localStorage.setItem("Email", document.getElementById('email').value)
+                    window.location.href = 'homepage.html'
+                    //window.location.href = "homepage.html";
+                })
+                .catch((error) => {
+                    //alert(error);
+                });
+
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let btn = document.getElementById('enter')
+            btn.addEventListener('click', function (evt) {
+                console.log(db)
+                console.log("works")
+                InsertData();
+            })
+        })
+        /*
+        document.addEventListener('DOMContentLoaded', () => {
+            let btn = document.getElementById('LoginBtn')
+            btn.addEventListener('click', function (evt) {
+                FindData();
+                clearFields();
+            })
+        })
+        */
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let btn = document.getElementById('submit-type')
+        btn.addEventListener('click', function (evt) {
+            if (document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex ].value == 1) {
+                console.log("student")
+            } else {
+                console.log("tutor")
+            }
+
+        })
+    })
+</script>
 
 </html>
