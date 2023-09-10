@@ -170,23 +170,38 @@
                         }
                     }
                 }
+                
+                
+                
                 console.log(heros.length)
+                var selectedValues = {}; // Create an object to store selected values for each hero
+
                 for (var i = 0; i < heros.length; i++) {
                     console.log("in i")
                     document.getElementById("contain").innerHTML += "<br><br><br><br><br><div class='jumbotron'style='' margin-left:3%; margin-right:3%; color: beige; background-color: #6E0606;''><div id = '" + heros[i][0] + "'></div><button id = 'register" + heros[i][0] + "'>Register</button>></div>"
-
                     var slots = heros[i][2].split(",")
                     console.log(slots)
                     var str = ""
                     for (var j = 0; j < slots.length - 1; j++) {
                         console.log("in j")
-                        str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='option" + (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'><br>\t" + slots[j] + "</label></div>"
-                        str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='option" + (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'><br>\t" + slots[j] + "</label></div>"
+                    str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='option" + (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'><br>\t" + slots[j] + "</label></div>"
+                    str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='option" + (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'><br>\t" + slots[j] + "</label></div>"
                     }
                     document.getElementById("" + heros[i][0]).innerHTML = "<h2>" + heros[i][0] + "</h2><h4>Course:" + heros[i][4] + "</h4><h4>Rate: $" + heros[i][3] + " per 30 minutes</h4><h3>Email: " + heros[i][1] + "</h3>Availible Slots</h3>" + str
                     let btn = document.getElementById('register' + heros[i][0])
+                    console.log(btn)
                     btn.addEventListener('click', function (evt) {
-                        sessions.push([heros[i][0]], heros[i][1])
+                        console.log("inside")
+                        var selectedRadio = document.querySelector('input[name="exampleRadios"]:checked');
+                        if (selectedRadio) {
+                            var selectedValue = selectedRadio.value;
+                            selectedValues[heros[i][0]] = selectedValue; // Store selected value for this hero
+                            console.log("Selected value for " + heros[i][0] + ": " + selectedValue);
+                        } else {
+                            console.log("No radio button selected for " + heros[i][0]);
+                        }
+
+                        // You can access the selected value later using selectedValues[heros[i][0]
                     })
                 }
 
