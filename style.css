@@ -206,6 +206,16 @@ nav a:hover{
 
 .about_text h2{
     font-family: 'Bangers',cursive;
+    font-size: 40px;
 }
 
-/*comment*/
+.reveal {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: .5s ease;
+  }
+  
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
