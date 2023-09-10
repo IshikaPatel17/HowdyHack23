@@ -101,9 +101,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             let btn = document.getElementById('button1')
             btn.addEventListener('click', function (evt) {
-                if(btn.value == "Find Hero"){
+                if(btn.innerHTML == "Find Hero"){
                     window.location.href = "findhero.html"
-                }else if(btn.value == "Profile"){
+                }else if(btn.innerHTML == "Profile"){
                     window.location.href = "profile.html"
                 }else{
                     window.location.href = "schedule.html"
