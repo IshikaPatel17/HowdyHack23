@@ -3,3 +3,33 @@ JavaScript and express
 
 
 hex-code : #6E0606
+
+!DOCTYPE html>
+<html lan=""en>
+<head>
+  <title>Howdy Heroes</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<body>
+      <!-- nav bar-->
+      <nav class="home1">
+        <div class="right">
+          <a href="signup.html">SIGN UP</a>
+          <a href="login.html">LOG IN</a>
+        </div>
+        <div class="left">
+          <a href="index.html">HOME</a>
+          <a href="about.html">ABOUT</a>
+      </div>
+    </nav>
+</html>
+</body>
