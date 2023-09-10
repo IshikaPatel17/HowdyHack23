@@ -5,8 +5,8 @@
                 "MATH 251",
                 "ENGR 102"
             ],
-            "dates": "Monday: 5:00pm-6:00pm, Teusday: 5:00pm-6:00pm, Wednesday: 5:00pm-6:00pm, ",
-            "email": "teacher1",
+            "dates": "Monday: 5:00pm-6:00pm, Tuesday: 5:00pm-6:00pm, Wednesday: 5:00pm-6:00pm, ",
+            "email": "teacherTS@tamu.edu",
             "name": "Taylor Swift",
             "password": "teacher1",
             "rate": "7",
@@ -21,7 +21,7 @@
             "dates": "Monday: 5:00pm-6:00pm, Wednesday: 5:00pm-6:00pm, Saturday: 5:00pm-6:00pm, ",
             "email": "teacher2",
             "name": "Wonder Woman",
-            "password": "teacher2",
+            "password": "teacherWW@tamu.edu",
             "rate": "5",
             "type": "hero",
             "username": "WonderWoman99"
@@ -34,12 +34,69 @@
                 "MATH 151"
             ],
             "dates": "Sunday: 5:00pm-6:00pm, Teusday: 5:00pm-6:00pm, Wednesday: 7:00pm-8:00pm, ",
-            "email": "teacher1",
+            "email": "teacherPinkie@tamu.edu",
             "name": "Pinkie Pie",
             "password": "teacher1",
             "rate": "4",
             "type": "hero",
             "username": "PinkiePie77"
+        },
+        "AshlynnB8": {
+            "course": [
+                "MATH 251",
+                "ENGR 102"
+            ],
+            "dates": "Monday: 4:00pm-7:00pm, Tuesday: 6:30pm-8:30pm, Wednesday: 5:00pm-6:00pm, ",
+            "email": "teacher2@tamu.edu",
+            "name": "Ashlynn Ber",
+            "password": "teacher1",
+            "rate": "8",
+            "type": "hero",
+            "username": "Ashlynnb8"
+        },
+        "AshlynnB8": {
+            "course": [
+                "MATH 251",
+                "ENGR 102"
+            ],
+            "dates": "Monday: 4:00pm-7:00pm, Tuesday: 6:30pm-8:30pm, Wednesday: 5:00pm-6:00pm, ",
+            "email": "teacher2@tamu.edu",
+            "name": "Ashlynn Ber",
+            "password": "teacher1",
+            "rate": "8",
+            "type": "hero",
+            "username": "Ashlynnb8"
+        },
+        "RyanR": {
+            "course": [
+                "MATH 152",
+                "ENGR 102",
+                "ENDS 101",
+                "ENGL 103"
+            ],
+            "dates": "Tuesday: 5:00pm-7:00pm, Wednesday: 6:30pm-8:30pm, Friday: 5:00pm-6:00pm, ",
+            "email": "Ryan2R@tamu.edu",
+            "name": "Ryan Reynolds",
+            "password": "teacher1",
+            "rate": "8",
+            "type": "hero",
+            "username": "RyanR"
+        },
+        "Flash12": {
+            "course": [
+                "MATH 251",
+                "ENGR 102",
+                "CHEM 117"
+            ],
+            "dates": "Monday: 3:00pm-5:00pm, Wednesday: 6:30pm-8:30pm, Saturday: 7:00pm-9:00pm, ",
+            "email": "teacherflash@tamu.edu",
+            "name": "Flash Hen",
+            "password": "Flash45",
+            "rate": "10",
+            "type": "hero",
+            "username": "Flash12"
+
+        
         }
     }
 }
