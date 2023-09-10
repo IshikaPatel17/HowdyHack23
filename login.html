@@ -79,11 +79,14 @@
                             localStorage.setItem("Password", document.getElementById('passwordBox').value)
                             localStorage.setItem("Name", snapshot.val().name)
                             localStorage.setItem("Email", document.getElementById('emailBox').value)
+                            localStorage.setItem("Type", snapshot.val().type)
+                            localStorage.setItem("Dates", snapshot.val().dates)
+                            localStorage.setItem("Rate", snapshot.val().rate)
+                            localStorage.setItem("Course", "none")
                             window.location.href = 'homepage.html'
                         } else {
-                            document.getElementById('info').innerHTML = "Incorrect Password";
+                            document.getElementById('info').innerHTML = "Incorrect Login information";
                         }
-
                     } else {
                         alert("This Account Does not exist");
                     }
