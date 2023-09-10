@@ -28,19 +28,27 @@
         <h1 class="welcome">Finish your profile</h1>
         <p class="lead">Please finish setting up your profile before we can start matching you.</p>
         <div id="jumbo>">
-            <h3>Account Type</h3>
+            <h3>Rate/30 minutes</h3>
+            <p><input type="text" id="rate-input"> /30 minutes</p>
+            <h3>Time slots</h3>
             <form>
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
                         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                            <option selected>Choose Account</option>
-                            <option value="1">student</option>
-                            <option value="2">hero</option>
+                            <option selected>Days of the week</option>
+                            <option value="1">Monday</option>
+                            <option value="2">Teusday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
                         </select>
                     </div>
                 </div>
             </form>
+            <input type="text">
+            <button id="add date and time"></button>
             <hr class="my-4">
             <a class="btn btn-primary btn-lg" id='submit-type' role="button"
                 style="background-color: rgb(78, 149, 149);">Next</a>
@@ -76,49 +84,26 @@
     const db = getDatabase();
 
     function InsertData() {
-        localStorage.setItem("Profile", document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
-        if(localStorage.getItem("Profile")==1){
-            update(ref(db, "" + localStorage.getItem("Username")), { type: "student"})
+        console.log(document.getElementById('username').value)
+        update(ref(db, "" + localStorage.getItem("Username")), { type: document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value })
             .then((userCredential) => {
-                console.log(document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
-                
-                if(localStorage.getItem("Profile")==1){
-                    window.location.href = 'homepage.html'
-                }else{
+                localStorage.setItem("Profile", document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
+                if (localStorage.getItem("Profile") == "student") {
+                    window.location.href = 'profilestudent.html'
+                } else {
                     window.location.href = 'profilehero.html'
                 }
-                
+
                 //window.location.href = "homepage.html";
             })
             .catch((error) => {
-                console.log("error")
                 //alert(error);
             });
-
-        }else{
-            update(ref(db, "" + localStorage.getItem("Username")), { type: "hero"})
-            .then((userCredential) => {
-                console.log(document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
-                
-                if(localStorage.getItem("Profile")==1){
-                    window.location.href = 'homepage.html'
-                }else{
-                    window.location.href = 'profilehero.html'
-                }
-                
-                //window.location.href = "homepage.html";
-            })
-            .catch((error) => {
-                console.log("error")
-                //alert(error);
-            });
-
-        }
 
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        let btn = document.getElementById('submit-type')
+        let btn = document.getElementById('enter')
         btn.addEventListener('click', function (evt) {
             InsertData();
         })
