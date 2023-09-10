@@ -15,6 +15,7 @@ body{
     top: -50px;
     font-family: 'Bangers', cursive;
     background-color: white;
+    background-color: white;
 }
 /*HOME1*/
 .home1{
@@ -71,8 +72,8 @@ nav a:hover{
     left: 445px;
     width: 400px;
     height: 400px;
-    background-image: radial-gradient(circle, #eac534 40%, transparent 16%);
-    background-size: 10px 10px; /* Adjust the size of the dots */
+    background-image: radial-gradient(circle, #ffcc00 40%, transparent 16%);
+    background-size: 15px 15px; /* Adjust the size of the dots */
     animation: 4s ease-in 0s 1 fadeIn;
 
 
@@ -168,11 +169,32 @@ nav a:hover{
     color: white;
 }
 
-/*.bang{
+.bang{
     position: absolute;
     height: 120px;
     top: 190px;
-    left: 5%;
-}*/
+    left: 28%;
+}
 
 /*ABOUT*/
+
+.content_about h1{
+    font-family:'Bangers', cursive; 
+    font-size: 100px;
+    padding: 40px;
+    color: rgb(228, 207, 17);
+    text-shadow: -1px -1px 0 #000, 10px 5px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.block img{
+    height: 300px;
+    position: relative;
+    right: -250px;
+    border: solid black 3px;
+    margin:
+}
+
+.block{
+    display: flex;
+    flex-direction: row;
+}
