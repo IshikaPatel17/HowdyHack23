@@ -48,15 +48,15 @@
         }
 
         .reveal {
-    transform: translateY(100px);
-    opacity: 0;
-    transition: .5s ease;
-  }
-  
-.reveal.active {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+            transform: translateY(100px);
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .reveal.active {
+            transform: translateY(0px);
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -129,7 +129,7 @@
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
 
-
+        function updateTime(){}
         function displayHeros() {
 
         }
@@ -192,17 +192,29 @@
                     var str = ""
                     for (var j = 0; j < slots.length - 1; j++) {
                         console.log("in j")
-                        str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='option" + (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'><br>\t" + slots[j] + "</label></div>"
-                        str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='option" + (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'><br>\t" + slots[j] + "</label></div>"
+                        str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='"+ (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'><br>\t" + slots[j] + "</label></div>"
+                        //str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='option" + (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'><br>\t" + slots[j] + "</label></div>"
                     }
                     document.getElementById("" + heros[i][0]).innerHTML = "<h2>" + heros[i][0] + "</h2><h4>Course:" + heros[i][4] + "</h4><h4>Rate: $" + heros[i][3] + " per 30 minutes</h4><h3>Email: " + heros[i][1] + "</h3>Availible Slots</h3>" + str
 
                 }
+
                 let btn = document.getElementById('register')
                 console.log(btn)
                 btn.addEventListener('click', function (evt) {
+                    window.location.href = "celebrate.html";
+                    
+                    let selectedColor = null;
+                    const radioButtons = document.querySelectorAll('input[name="exampleRadios"]')
+                    radioButtons.forEach((radio) => {
+                        if (radio.checked) {
+                            selectedColor = radio.value;
+                        }
+                        console.log(slots[(parseInt(selectedColor))-1])
+
+                    });
                     console.log("inside")
-                    window.location.href = "congrats.html"
+                    //window.location.href = "congrats.html"
                     // You can access the selected value later using selectedValues[heros[i][0]
                 })
 
@@ -295,21 +307,21 @@
 
         window.addEventListener('scroll', reveal);
 
-function reveal() {
-    var reveals = document.querySelectorAll('.reveal');
-  
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var revealTop = reveals[i].getBoundingClientRect().top;
-      var revealPoint = 150;
-  
-      if (revealTop < windowHeight - revealPoint) {
-        reveals[i].classList.add('active');
-      }
-      else {
-        reveals[i].classList.remove('active');
-      }
-    }
-  }
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                var revealPoint = 150;
+
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add('active');
+                }
+                else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
     </script>
 </body>
