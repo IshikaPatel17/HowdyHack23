@@ -29,7 +29,7 @@
         <p class="lead">Please finish setting up your profile before we can start matching you.</p>
         <div id="jumbo>">
             <h3>Account Type</h3>
-            <form>
+            
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
@@ -40,16 +40,32 @@
                         </select>
                     </div>
                 </div>
-            </form>
+                <label for="photo">Choose a photo!</label>
+                <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png" onchange="loadFile(event)">
+                <br>
+                <img id="output" src="" alt="Selected Image" width="300">
+                <button id="hi">Submit Image</button>
+            
             <hr class="my-4">
             <a class="btn btn-primary btn-lg" id='submit-type' role="button"
                 style="background-color: rgb(78, 149, 149);">Next</a>
         </div>
     </div>
 </body>
+<script>
+    var okay;
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+        //console.log(event.target.files[0])
+        okay = event.target.files[0]
+
+    };
+</script>
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js";
     //import { getDatabase, set} from 'firebase/database'
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
@@ -71,47 +87,84 @@
     const app = initializeApp(firebaseConfig);
     //const analytics = getAnalytics(app);
 
-    import { getDatabase, set, get, update, remove, ref, child }
+    import { getDatabase, set, get, update, remove, child }
         from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
     const db = getDatabase();
+    const storage = getStorage(app);
+    //image storage
+    function run(evt) {
+        console.log(okay)
+        //var image = document.getElementById('output');
+        //image.src = URL.createObjectURL(evt.target.files[0]);
+        //console.log(event.target.files[0])
+        //okay = evt.target.files[0]
+        console.log("hi")
+        const storageRef = ref(storage, localStorage.getItem("Username") + "Image")
+        uploadBytesResumable(storageRef, okay)
+        //pulling image 
+        //const task = uploadBytesResumable(storageRef, okay)
+        // task.on("state_changed", function () { }, (error) => { }, async function () {
+        //     await getDownloadURL(task.snapshot.ref).then(
+        //         async function (url) {
+        //               
+        //         }
+        //     )
+        // })
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        let btn = document.getElementById('hi')
+        btn.addEventListener('click', function (evt) {
+            run()
+        })
+    })
+
+    //end of image storage
+
+
+
+
+
+
+
+
 
     function InsertData() {
         localStorage.setItem("Profile", document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
-        if(localStorage.getItem("Profile")==1){
-            update(ref(db, "" + localStorage.getItem("Username")), { type: "student"})
-            .then((userCredential) => {
-                console.log(document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
-                
-                if(localStorage.getItem("Profile")==1){
-                    window.location.href = 'homepage.html'
-                }else{
-                    window.location.href = 'profilehero.html'
-                }
-                
-                //window.location.href = "homepage.html";
-            })
-            .catch((error) => {
-                console.log("error")
-                //alert(error);
-            });
+        if (localStorage.getItem("Profile") == 1) {
+            update(ref(db, "" + localStorage.getItem("Username")), { type: "student" })
+                .then((userCredential) => {
+                    console.log(document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
 
-        }else{
-            update(ref(db, "" + localStorage.getItem("Username")), { type: "hero"})
-            .then((userCredential) => {
-                console.log(document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
-                
-                if(localStorage.getItem("Profile")==1){
-                    window.location.href = 'homepage.html'
-                }else{
-                    window.location.href = 'profilehero.html'
-                }
-                
-                //window.location.href = "homepage.html";
-            })
-            .catch((error) => {
-                console.log("error")
-                //alert(error);
-            });
+                    if (localStorage.getItem("Profile") == 1) {
+                        window.location.href = 'homepage.html'
+                    } else {
+                        window.location.href = 'profilehero.html'
+                    }
+
+                    //window.location.href = "homepage.html";
+                })
+                .catch((error) => {
+                    console.log("error")
+                    //alert(error);
+                });
+
+        } else {
+            update(ref(db, "" + localStorage.getItem("Username")), { type: "hero" })
+                .then((userCredential) => {
+                    console.log(document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
+
+                    if (localStorage.getItem("Profile") == 1) {
+                        window.location.href = 'homepage.html'
+                    } else {
+                        window.location.href = 'profilehero.html'
+                    }
+
+                    //window.location.href = "homepage.html";
+                })
+                .catch((error) => {
+                    console.log("error")
+                    //alert(error);
+                });
 
         }
 

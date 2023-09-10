@@ -48,9 +48,9 @@
                     </div>
                 </div>
             </form>
-            <input id = "input" type="text">
-            <button id="add" style = "background-color: #6E0606; color: beige;">Add Timeslot</button>
-            <p id = "list">
+            <input id="input" type="text">
+            <button id="add" style="background-color: #6E0606; color: beige;">Add Timeslot</button>
+            <p id="list">
 
             </p>
             <hr class="my-4">
@@ -89,7 +89,7 @@
 
     function InsertData() {
         //console.log(document.getElementById('username').value)
-        update(ref(db, "" + localStorage.getItem("Username")), { rate: document.getElementById("rate-input").value, dates: document.getElementById("list").value})
+        update(ref(db, "" + localStorage.getItem("Username")), { rate: document.getElementById("rate-input").value, dates: document.getElementById("list").value })
             .then((userCredential) => {
                 localStorage.setItem("Profile", document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
                 window.location.href = "homepage.html"
@@ -99,7 +99,7 @@
                 //alert(error);
             });
     }
-
+    
     document.addEventListener('DOMContentLoaded', () => {
         let btn = document.getElementById('submit-type')
         btn.addEventListener('click', function (evt) {
@@ -109,7 +109,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         let btn = document.getElementById('add')
         btn.addEventListener('click', function (evt) {
-            document.getElementById("list").innerHTML += getText()+": "+document.getElementById("input").value + ", "
+            document.getElementById("list").innerHTML += getText() + ": " + document.getElementById("input").value + ", "
         })
     })
     /*
@@ -121,23 +121,23 @@
         })
     })
     */
-    function getText(){
+    function getText() {
         var store = document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value
-        if(store == 1){
+        if (store == 1) {
             return "Monday"
-        }else if(store == 2){
+        } else if (store == 2) {
             return "Teusday"
-        }else if(store == 3){
+        } else if (store == 3) {
             return "Wednesday"
-        }else if(store == 4){
+        } else if (store == 4) {
             return "Thursday"
-        }else if(store == 5){
+        } else if (store == 5) {
             return "Friday"
-        }else if(store == 6){
+        } else if (store == 6) {
             return "Saturday"
-        }else if(store == 7){
+        } else if (store == 7) {
             return "Sunday"
-        }else{
+        } else {
             return null
         }
     }
