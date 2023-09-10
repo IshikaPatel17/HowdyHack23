@@ -49,6 +49,17 @@
         button:hover {
             transform: scale(1.2);
         }
+
+        .reveal {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: .5s ease;
+  }
+  
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
     </style>
 </head>
 
@@ -178,7 +189,7 @@
 
                 for (var i = 0; i < heros.length; i++) {
                     console.log("in i")
-                    document.getElementById("contain").innerHTML += "<br><br><br><br><br><div class='jumbotron'style='' margin-left:3%; margin-right:3%; color: beige; background-color: #6E0606;''><div id = '" + heros[i][0] + "'></div><button id = 'register'>Register</button>></div>"
+                    document.getElementById("contain").innerHTML += "<br><br><br><br><br><div class='jumbotron reveal'style='' margin-left:3%; margin-right:3%; color: beige; background-color: #6E0606;''><div id = '" + heros[i][0] + "'></div><button id = 'register'>Register</button>></div>"
                     var slots = heros[i][2].split(",")
                     console.log(slots)
                     var str = ""
@@ -284,5 +295,24 @@
 
             //})
         })
+
+        window.addEventListener('scroll', reveal);
+
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var revealTop = reveals[i].getBoundingClientRect().top;
+      var revealPoint = 150;
+  
+      if (revealTop < windowHeight - revealPoint) {
+        reveals[i].classList.add('active');
+      }
+      else {
+        reveals[i].classList.remove('active');
+      }
+    }
+  }
     </script>
 </body>
