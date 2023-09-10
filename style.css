@@ -1,0 +1,89 @@
+body{
+    width: 100%;
+    margin:0;
+    padding:0;
+    height: 100%;
+    position: relative;
+    top: -50px;
+    font-family: 'Bangers', cursive;
+    background-color: white;
+}
+
+.home1{
+    margin-top: -10px;
+}
+nav{
+    padding: 15px;
+    width: 100%;
+    font-weight: lighter;
+    position: fixed;
+    top: 5px;
+    z-index: 1;
+    background-color: black;
+}
+
+nav a{
+    width: 100%;
+    font-size: 20px;
+    padding-left: 50px;
+    position: relative;
+    right:0;
+    color: white;
+    text-decoration: none;
+}
+
+nav .left{
+    float: left;
+    position: relative;
+    left: -50px;
+}
+
+nav .right{
+    float: right;
+    position: relative;
+    left: -25px;
+}
+
+nav a:hover{
+    color: rgb(161, 81, 81);
+}
+
+.welcome{
+    height: 200%;
+
+}
+
+.circle {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 150px;
+    z-index:-1;
+    left: 445px;
+    width: 400px;
+    height: 400px;
+    background-image: radial-gradient(circle, #eac534 40%, transparent 16%);
+    background-size: 10px 10px; /* Adjust the size of the dots */
+  }
+
+.welcome h1{
+    font-size: 150px;
+    padding: 20px;
+    color: rgb(147, 17, 17);
+    text-shadow: -1px -1px 0 #000, 10px 5px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.button_home{
+    font-size: 25px;
+    padding: 10px;
+    text-decoration: none;
+    border: solid black 3px;
+    color: rgb(147, 17, 17);
+    margin: 25px;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.welcome a:hover{
+    background-color: black;
+}
