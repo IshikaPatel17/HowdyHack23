@@ -43,12 +43,16 @@
                             <option value="4">Thursday</option>
                             <option value="5">Friday</option>
                             <option value="6">Saturday</option>
+                            <option value="7">Sunday</option>
                         </select>
                     </div>
                 </div>
             </form>
-            <input type="text">
-            <button id="add date and time"></button>
+            <input id = "input" type="text">
+            <button id="add" style = "background-color: #6E0606; color: beige;">Add Timeslot</button>
+            <p id = "list">
+
+            </p>
             <hr class="my-4">
             <a class="btn btn-primary btn-lg" id='submit-type' role="button"
                 style="background-color: rgb(78, 149, 149);">Next</a>
@@ -84,28 +88,28 @@
     const db = getDatabase();
 
     function InsertData() {
-        console.log(document.getElementById('username').value)
-        update(ref(db, "" + localStorage.getItem("Username")), { type: document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value })
+        //console.log(document.getElementById('username').value)
+        update(ref(db, "" + localStorage.getItem("Username")), { rate: document.getElementById("rate-input").value, dates: document.getElementById("list").value})
             .then((userCredential) => {
                 localStorage.setItem("Profile", document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
-                if (localStorage.getItem("Profile") == "student") {
-                    window.location.href = 'profilestudent.html'
-                } else {
-                    window.location.href = 'profilehero.html'
-                }
-
+                window.location.href = "homepage.html"
                 //window.location.href = "homepage.html";
             })
             .catch((error) => {
                 //alert(error);
             });
-
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        let btn = document.getElementById('enter')
+        let btn = document.getElementById('submit-type')
         btn.addEventListener('click', function (evt) {
             InsertData();
+        })
+    })
+    document.addEventListener('DOMContentLoaded', () => {
+        let btn = document.getElementById('add')
+        btn.addEventListener('click', function (evt) {
+            document.getElementById("list").innerHTML += getText()+": "+document.getElementById("input").value + ", "
         })
     })
     /*
@@ -117,19 +121,26 @@
         })
     })
     */
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-        let btn = document.getElementById('submit-type')
-        btn.addEventListener('click', function (evt) {
-            if (document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value == 1) {
-                console.log("student")
-            } else {
-                console.log("tutor")
-            }
-
-        })
-    })
+    function getText(){
+        var store = document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value
+        if(store == 1){
+            return "Monday"
+        }else if(store == 2){
+            return "Teusday"
+        }else if(store == 3){
+            return "Wednesday"
+        }else if(store == 4){
+            return "Thursday"
+        }else if(store == 5){
+            return "Friday"
+        }else if(store == 6){
+            return "Saturday"
+        }else if(store == 7){
+            return "Sunday"
+        }else{
+            return null
+        }
+    }
 </script>
 
 </html>
