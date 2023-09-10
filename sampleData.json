@@ -1,0 +1,45 @@
+{
+    "jsonData": {
+        "TaylorSwiftFearless": {
+            "course": [
+                "MATH 251",
+                "ENGR 102"
+            ],
+            "dates": "Monday: 5:00pm-6:00pm, Teusday: 5:00pm-6:00pm, Wednesday: 5:00pm-6:00pm, ",
+            "email": "teacher1",
+            "name": "Taylor Swift",
+            "password": "teacher1",
+            "rate": "7",
+            "type": "hero",
+            "username": "TaylorSwiftFearless"
+        },
+        "WonderWoman99": {
+            "course": [
+              "MATH 251",
+              "POLS 207"
+            ],
+            "dates": "Monday: 5:00pm-6:00pm, Wednesday: 5:00pm-6:00pm, Saturday: 5:00pm-6:00pm, ",
+            "email": "teacher2",
+            "name": "Wonder Woman",
+            "password": "teacher2",
+            "rate": "5",
+            "type": "hero",
+            "username": "WonderWoman99"
+          },
+          "PinkiePie77": {
+            "course": [
+                "CHEM 117",
+                "ENGR 102",
+                "MATH 152",
+                "MATH 151"
+            ],
+            "dates": "Sunday: 5:00pm-6:00pm, Teusday: 5:00pm-6:00pm, Wednesday: 7:00pm-8:00pm, ",
+            "email": "teacher1",
+            "name": "Pinkie Pie",
+            "password": "teacher1",
+            "rate": "4",
+            "type": "hero",
+            "username": "PinkiePie77"
+        }
+    }
+}
