@@ -185,7 +185,7 @@
             "course": [
                 "MATH 308",
                 "PHYS 222",
-                "ECEN 214",
+                "ECEN 214"
             ],
             "dates": "Tuesday: 3:00pm-5:00pm, Wednesday: 5:0pm-8:00pm, Friday: 7:00pm-9:00pm, ",
             "email": "AmanBB@tamu.edu",
@@ -287,7 +287,7 @@
         "Ken22": {
             "course": [
                 "MATH 152",
-                "BIOL 112"
+                "BIOL 112",
                 "CHEM 117",
                 "COMM 203"
             ],
