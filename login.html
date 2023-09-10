@@ -75,8 +75,11 @@
                         if (snapshot.val().password == document.getElementById('passwordBox').value && snapshot.val().email == document.getElementById('emailBox').value) {
                             console.log(document.getElementById('usernameBox').value)
                             localStorage.setItem('Username', document.getElementById('usernameBox').value)
+                            localStorage.setItem("Password", document.getElementById('passwordBox').value)
+                            localStorage.setItem("Name", snapshot.val().name)
+                            localStorage.setItem("Email", document.getElementById('emailBox').value)
                             window.location.href = 'homepage.html'
-                        } else { 
+                        } else {
                             document.getElementById('info').innerHTML = "Incorrect Password";
                         }
 
@@ -89,7 +92,7 @@
                 })
 
         }
-        
+
         /*
         document.addEventListener('DOMContentLoaded', () => {
             let btn = document.getElementById('enter')
@@ -104,7 +107,7 @@
             let btn = document.getElementById('LoginBtn')
             btn.addEventListener('click', function (evt) {
                 FindData();
-            
+
             })
         })
 
