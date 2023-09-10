@@ -62,9 +62,10 @@
 
         function checkProf(){
             const dbref = ref(db);
-            get(child(dbref, "" + localStorage.getItem("Username")))
+            get(child(dbref, "jsonData/"+"" + localStorage.getItem("Username")))
                 .then((snapshot) => {
                     if (snapshot.exists()) {
+                        console.log(snapshot.val().type)
                         if (snapshot.val().type == "none") {
                             console.log("not working")
                         } else if(snapshot.val().type == "hero"){
@@ -76,7 +77,7 @@
                         }
 
                     } else {
-                        alert("This Account Does not exist");
+                        alert("Complete your profile");
                     }
                 })
                 .catch((error) => {
@@ -101,9 +102,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             let btn = document.getElementById('button1')
             btn.addEventListener('click', function (evt) {
-                if(btn.innerHTML == "Find Hero"){
+                console.log(btn.innerHTML);
+                if(btn.innerHTML == 'Find hero'){
                     window.location.href = "findhero.html"
-                }else if(btn.innerHTML == "Profile"){
+                }else if(btn.innerHTML == 'Profile'){
                     window.location.href = "profile.html"
                 }else{
                     window.location.href = "schedule.html"

@@ -1,6 +1,6 @@
 A
-AALO - Arabic & Asian Language (AALO)
 ACCT - Accounting (ACCT)
+AALO - Arabic & Asian Language (AALO)
 AERO - Aerospace Engineering (AERO)
 AERS - Aerospace Studies (AERS)
 AFST - Africana Studies (AFST)

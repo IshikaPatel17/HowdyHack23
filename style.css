@@ -1,5 +1,11 @@
 
 
+input{
+    color: black;
+    background-color: rgb(210, 138, 138);
+}
+
+
 body{
     width: 100%;
     margin:0;
@@ -10,7 +16,6 @@ body{
     font-family: 'Bangers', cursive;
     background-color: white;
 }
-
 /*HOME1*/
 .home1{
     margin-top: -10px;

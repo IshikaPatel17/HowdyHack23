@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: beige;
+        }
+        .jumbotron{
+            margin-top: 8%;
+            margin-left: 1%;
+            margin-right: 1%;
+            background-color: maroon;
+            color: beige;
+        }
+        button{
+            background-color: pink;
+            color: maroon;
+            margin: 1%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="home1">
+        <div class="right">
+            <a href="profile.html">PROFILE</a>
+            <a href="#">LOG OUT</a>
+        </div>
+        <div class="left">
+            <a href="homepage.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+        </div>
+    </nav>
+    <h1 id = "results">Results for </h1>
+    <div id="contain">
+        <!-- <div class="jumbotron" style=" margin-left:3%; margin-right:3%; color: beige; background-color: #6E0606;">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Default radio
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    Second default radio
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3"
+                    disabled>
+                <label class="form-check-label" for="exampleRadios3">
+                    Disabled radio
+                </label>
+            </div>
+        </div>
+    </div>
+    <button id="generate">generate</button> -->
+        <!-- <button id="generate">generate</button> -->
+    </div>
+    </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- Firebase JavaScript SDK -->
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        document.getElementById("results").innerHTML = "Heros for the course " + localStorage.getItem("Course")
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwCOZyWSaa0xswC4CFLRT1-Kf5ZDeojyo",
+            authDomain: "hack23-d29c9.firebaseapp.com",
+            databaseURL: "https://hack23-d29c9-default-rtdb.firebaseio.com",
+            projectId: "hack23-d29c9",
+            storageBucket: "hack23-d29c9.appspot.com",
+            messagingSenderId: "991221953378",
+            appId: "1:991221953378:web:14fae9949ac2e35d8d323b",
+            measurementId: "G-LK91YT4F18"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+
+        function displayHeros() {
+
+        }
+        function getJson() {
+            // Reference to your database node
+            const dbRef = ref(database, 'jsonData'); // Replace 'your-node' with your specific node
+
+            onValue(dbRef, (snapshot) => {
+                var tutors = []
+                //var arrayname = [o, t];
+                const data = snapshot.val();
+                // 'data' contains the JSON data from Firebase
+                console.log(data)
+                //console.log(data.o)
+                //console.log(data.length)
+                // console.log(data.o.course)
+               
+                // var jsonData = data
+                // for (const key in jsonData) {
+                //     if (jsonData.hasOwnProperty(key) && Array.isArray(jsonData[key].course)) {
+                //         const courses = jsonData[key].course;
+                //         console.log(`Courses for "${key}":`);
+                //         courses.forEach((course) => {
+                //             console.log(course);
+                //         });
+                //     }
+                // }
+
+
+                var heros = []
+                for (const key in data) {
+                    if (data.hasOwnProperty(key) && Array.isArray(data[key].course)) {
+                        const courses = data[key].course;
+                        console.log(`Courses for "${key}":`);
+                        var stuff = null;
+                        if (data[key].type == "hero") {
+                            courses.forEach((course) => {
+                                console.log(course);
+                                if (course == localStorage.getItem("Course")) {
+                                    stuff = course
+                                }
+                            });
+                        }
+                        if (stuff != null) {
+                            heros.push([data[key].username, data[key].email, data[key].dates, data[key].rate, stuff])
+                        }
+                    }
+                }
+                console.log(heros.length)
+                for (var i = 0; i < heros.length; i++) {
+                    console.log("in i")
+                    document.getElementById("contain").innerHTML += "<div class='jumbotron'style='' margin-left:3%; margin-right:3%; color: beige; background-color: #6E0606;''><div id = '" + heros[i][0] + "'></div><button id = 'register'>Register</button>></div>"
+
+                    var slots = heros[i][2].split(",")
+                    console.log(slots)
+                    var str = ""
+                    for (var j = 0; j < slots.length-1; j++) {
+                        console.log("in j")
+                        str += "<div class='form-check'><input class='form-check-input' type='radio' name='exampleRadios' id='radio" + heros[i][0] + "' value='option" + (j + 1) + "'checked><label class='form-check-label' for='exampleRadios1'>\t" + slots[j] + "</label></div>"
+                    }
+                    document.getElementById(""+heros[i][0]).innerHTML = "<h2>" + heros[i][0] + "</h2><h4>Course:" + heros[i][4] + "</h4><h4>Rate: $" + heros[i][3] + " per 30 minutes</h4><h3>Email: " + heros[i][1] + "</h3>Availible Slots</h3>" + str
+
+                }
+
+
+
+                console.log(heros);
+
+                // for(var name in arrayname){
+                //     console.log(data.name.course)
+                // }
+
+                // for (var [key, value] in Object.entries(data)) {
+                //     console.log(key + " " + value)
+                // }
+
+                // data.forEach((elemant)=>console.log(element.course))
+                // for(var i = 0; i < data.length; i++){
+                //     console.log(data[i])
+                //     console.log("HI")
+                // }
+
+                // for (var key in data) {
+                //     var courses = null
+                //     console.log(data.key.course)
+                //     for(var i = 0;i<(data.key.course).length;i++){
+                //         if(data.key.course[i] == localStorage.getItem("Course")){
+                //             courses = data.key.course[i]
+                //         }
+                //     }
+                //     if(courses != null){
+                //         tutors.add(data.key, courses)
+                //     }
+                // }
+                // console.log(tutors);
+            });
+
+
+        }
+        function FindData() {
+            const dbref = ref(db);
+            get(child(dbref, "jsonData/" + "" + document.getElementById('usernameBox').value))
+                .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        if (snapshot.val().password == document.getElementById('passwordBox').value && snapshot.val().email == document.getElementById('emailBox').value) {
+                            console.log(document.getElementById('usernameBox').value)
+                            localStorage.setItem('Username', document.getElementById('usernameBox').value)
+                            localStorage.setItem("Password", document.getElementById('passwordBox').value)
+                            localStorage.setItem("Name", snapshot.val().name)
+                            localStorage.setItem("Email", document.getElementById('emailBox').value)
+                            window.location.href = 'homepage.html'
+                        } else {
+                            document.getElementById('info').innerHTML = "Incorrect Password";
+                        }
+
+                    } else {
+                        alert("This Account Does not exist");
+                    }
+                })
+                .catch((error) => {
+                    alert(error)
+                })
+
+        }
+        var heros = {}
+
+        document.addEventListener('DOMContentLoaded', () => {
+            //let btn = document.getElementById('generate')
+            //btn.addEventListener('click', function (evt) {
+            //InsertData();
+            //localStorage.setItem("Course", document.getElementById("picker").options[document.getElementById("picker").selectedIndex].innerHTML)
+            console.log(localStorage.getItem("Course"))
+            getJson()
+
+
+            //})
+        })
+    </script>
+</body>

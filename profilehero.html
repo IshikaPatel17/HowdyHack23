@@ -3,6 +3,9 @@
 
 <head>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
@@ -29,7 +32,7 @@
         <p class="lead">Please finish setting up your profile before we can start matching you.</p>
         <div id="jumbo>">
             <h3>Rate/30 minutes</h3>
-            <p><input type="text" id="rate-input"> /30 minutes</p>
+            <p>$<input type="text" id="rate-input"> /30 minutes</p>
             <h3>Time slots</h3>
             <form>
                 <div class="form-row align-items-center">
@@ -50,15 +53,29 @@
             </form>
             <input id="input" type="text">
             <button id="add" style="background-color: #6E0606; color: beige;">Add Timeslot</button>
-            <p id="list">
+            <p id="list"></p>
+            <select class="selectpicker" id = "picker" data-show-subtext="true" data-live-search="true">
+                <option value = "1">MATH</option>
+                <option value = "2">ENGR</option>
+                <option value = "3">POLS</option>
+            </select>
+            <h2>Course number</h2>
+                <input style = "color: black;"id = "courseNum" class ="text">
+            <button id = "addCourse">Add Course</button>
+            <p id="listCourse"></p>
+            
 
-            </p>
             <hr class="my-4">
+            
             <a class="btn btn-primary btn-lg" id='submit-type' role="button"
                 style="background-color: rgb(78, 149, 149);">Next</a>
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
@@ -78,7 +95,7 @@
         appId: "1:991221953378:web:14fae9949ac2e35d8d323b",
         measurementId: "G-LK91YT4F18"
     };
-
+    var courses = []
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     //const analytics = getAnalytics(app);
@@ -89,7 +106,9 @@
 
     function InsertData() {
         //console.log(document.getElementById('username').value)
-        update(ref(db, "" + localStorage.getItem("Username")), { rate: document.getElementById("rate-input").value, dates: document.getElementById("list").value })
+        console.log(document.getElementById("listCourse").innerHTML)
+        console.log(document.getElementById("list").innerHTML)
+        update(ref(db, "jsonData/"+"" + localStorage.getItem("Username")), { rate: document.getElementById("rate-input").value, dates: document.getElementById("list").innerHTML, course: courses})
             .then((userCredential) => {
                 localStorage.setItem("Profile", document.getElementById("inlineFormCustomSelect").options[document.getElementById("inlineFormCustomSelect").selectedIndex].value)
                 window.location.href = "homepage.html"
@@ -110,6 +129,13 @@
         let btn = document.getElementById('add')
         btn.addEventListener('click', function (evt) {
             document.getElementById("list").innerHTML += getText() + ": " + document.getElementById("input").value + ", "
+        })
+    })
+    document.addEventListener('DOMContentLoaded', () => {
+        let btn = document.getElementById('addCourse')
+        btn.addEventListener('click', function (evt) {
+            document.getElementById("listCourse").innerHTML += document.getElementById("picker").options[document.getElementById("picker").selectedIndex].innerHTML + " "+document.getElementById('courseNum').value + ", "
+            courses.push(document.getElementById("picker").options[document.getElementById("picker").selectedIndex].innerHTML + " "+document.getElementById('courseNum').value )
         })
     })
     /*

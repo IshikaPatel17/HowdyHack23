@@ -69,7 +69,7 @@
 
         function FindData() {
             const dbref = ref(db);
-            get(child(dbref, "" + document.getElementById('usernameBox').value))
+            get(child(dbref, "jsonData/"+"" + document.getElementById('usernameBox').value))
                 .then((snapshot) => {
                     if (snapshot.exists()) {
                         if (snapshot.val().password == document.getElementById('passwordBox').value && snapshot.val().email == document.getElementById('emailBox').value) {
