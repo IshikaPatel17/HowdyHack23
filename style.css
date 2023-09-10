@@ -63,7 +63,7 @@ nav a:hover{
 }
 
 .circle {
-    background-color: white;
+    background-color: rgb(165, 224, 243);
     border-radius: 50%;
     position: absolute;
     top: 150px;
