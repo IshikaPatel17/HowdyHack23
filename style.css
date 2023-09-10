@@ -211,6 +211,13 @@ nav a:hover{
     font-size: 40px;
 }
 
+.about_text p{
+    font-size: 20px;
+    background-color: white;
+    border: solid black 2px;
+    padding: 20px;
+}
+
 .reveal {
     transform: translateY(100px);
     opacity: 0;
