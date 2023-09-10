@@ -5,36 +5,111 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <style>
-            body{
-                background-color: beige;
-            }
-        </style>
+    <style>
+        body {
+            background-color: beige;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="home1">
         <div class="right">
-          <a href="profile.html">PROFILE</a>
-          <a href="#">LOG OUT</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="#">LOG OUT</a>
         </div>
         <div class="left">
-          <a href="homepage.html">HOME</a>
-          <a href="about.html">ABOUT</a>
-      </div>
-      </nav>
-    <div class="jumbotron" style="margin-top:10%; margin-left:3%; margin-right:3%; color: beige; background-color: #6E0606;">
-        <h1 class="welcome">Welcome</h1>
-        <p class="lead">Please finish setting up your profile before we can start matching you.</p>
+            <a href="homepage.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+        </div>
+    </nav>
+    <div class="jumbotron"
+        style="margin-top:10%; margin-left:3%; margin-right:3%; color: beige; background-color: #6E0606;">
+        <h1 id="welcome">Welcome</h1>
+        <p class="lead" id = "statement">Please finish setting up your profile before we can start matching you.</p>
         <hr class="my-4">
-        <a class="btn btn-primary btn-lg" href="profile.html" role="button"
+        <a id = "button1" class="btn btn-primary btn-lg" href="#" role="button"
             style="background-color: rgb(78, 149, 149);">Profile</a>
     </div>
-    <script>
+    <script type="module">
+        
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        //import { getDatabase, set} from 'firebase/database'
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwCOZyWSaa0xswC4CFLRT1-Kf5ZDeojyo",
+            authDomain: "hack23-d29c9.firebaseapp.com",
+            databaseURL: "https://hack23-d29c9-default-rtdb.firebaseio.com",
+            projectId: "hack23-d29c9",
+            storageBucket: "hack23-d29c9.appspot.com",
+            messagingSenderId: "991221953378",
+            appId: "1:991221953378:web:14fae9949ac2e35d8d323b",
+            measurementId: "G-LK91YT4F18"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        //const analytics = getAnalytics(app);
+
+        import { getDatabase, set, get, update, remove, ref, child }
+            from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        const db = getDatabase();
+
+        function checkProf(){
+            const dbref = ref(db);
+            get(child(dbref, "" + localStorage.getItem("Username")))
+                .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        if (snapshot.val().type == "none") {
+                            console.log("not working")
+                        } else if(snapshot.val().type == "hero"){
+                            document.getElementById("button1").innerHTML = "Scheduled sessions"
+                            document.getElementById("statement").innerHTML = "Your profile is se up and ready to go! Click below to see your scheduled sessions."
+                        }else{
+                            document.getElementById("statement").innerHTML = "Your profile is se up and ready to go! Click below to get matched to heros."
+                            document.getElementById("button1").innerHTML = "Find hero"
+                        }
+
+                    } else {
+                        alert("This Account Does not exist");
+                    }
+                })
+                .catch((error) => {
+                    alert(error)
+                })
+        }
+
+        /*
+        document.addEventListener('DOMContentLoaded', () => {
+            let btn = document.getElementById('enter')
+            btn.addEventListener('click', function (evt) {
+                console.log(db)
+                console.log("works")
+                InsertData();
+            })
+        })
+        */
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('welcome').innerHTML = "Welcome " + localStorage.getItem("Username")
+            checkProf();
         })
-
+        document.addEventListener('DOMContentLoaded', () => {
+            let btn = document.getElementById('button1')
+            btn.addEventListener('click', function (evt) {
+                if(btn.value == "Find Hero"){
+                    window.location.href = "findhero.html"
+                }else if(btn.value == "Profile"){
+                    window.location.href = "profile.html"
+                }else{
+                    window.location.href = "schedule.html"
+                }
+            })
+        })
     </script>
 </body>
 
