@@ -229,12 +229,12 @@
             "course": [
                 "MATH 151",
                 "ENGR 102",
-                "CHEM 117".
+                "CHEM 117",
                 "COMM 203"
             ],
             "dates": "Monday: 3:00pm-5:00pm, Thursday: 6:00pm-8:00pm, Friday: 7:00pm-9:00pm, ",
             "email": "KentMurray@tamu.edu",
-            "name": "Kent Murray,
+            "name": "Kent Murray",
             "password": "Kent2",
             "rate": "8",
             "type": "hero",
